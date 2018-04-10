@@ -1,7 +1,7 @@
 # Личный проект «Мишка» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Дмитрий](https://up.htmlacademy.ru/adaptive/14/user/87930).
-* Наставник: `Неизвестно`.
+* Наставник: [Василика Климова](https://htmlacademy.ru/profile/id415397).
 
 ---
 
