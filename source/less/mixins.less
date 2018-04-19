@@ -1,0 +1,38 @@
+.normal-font (@normal-font-size: 17px; @normal-font-height: 24px; @normal-font-weight: 400; @normal-font-family: "Open Sans", "Arial", sans-serif) {
+  font-size: @normal-font-size;
+  line-height: @normal-font-height;
+  font-weight: @normal-font-weight;
+  font-family: @normal-font-family;
+  font-style: normal;
+}
+
+.no-outline() {
+  outline: none;
+  background: transparent;
+
+  &::before {
+    display: none;
+  }
+}
+
+.mp(@list-margin: 0; @list-padding: 0;) {
+  margin: @list-margin;
+  padding: @list-padding;
+}
+
+.list(@list-margin: 0; @list-padding: 0; @list-style: none) {
+  margin: @list-margin;
+  padding: @list-padding;
+  list-style: @list-style;
+}
+
+.center-margin(@margin-c: 0 auto;) {
+  margin: @margin-c;
+}
+
+.retina-bg (@bg-img: ''; @bs-width: auto; @bs-height: auto; @dppx: 2) {
+  @media (min-resolution: unit((96 * (@dppx - 0.98) ),dpi)), (min-resolution: unit((@dppx - 0.98),dppx)) {
+    background-image: url(@bg-img);
+    background-size: @bs-width @bs-height;
+  }
+}
