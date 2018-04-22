@@ -1,0 +1,72 @@
+//кнопка меню "гамбургер" -->
+.main-navigation__toggle {
+  position: absolute;
+  top: 32px;
+  right: 30px;
+  width: 20px;
+  height: 15px;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+
+  &:hover,
+  &:active {
+    background-color: #ffffff;
+  }
+}
+
+.main-navigation__toggle--closed {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 2px;
+    background-color: #201e1e;
+    box-shadow: 0 7px 0 0 #201e1e,
+      0 14px 0 0 #201e1e;
+  }
+
+  &:active::before {
+    background-color: fade(#201e1e, 30%);
+    box-shadow: 0 7px 0 0 fade(#201e1e, 30%),
+      0 14px 0 0 fade(#201e1e, 30%);
+  }
+}
+//<--кнопка меню "гамбургер"
+//кнопка закрытия меню "крестик" -->
+.main-navigation__toggle--opened {
+  top: 0;
+  left: 0;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: 18px;
+    width: 20px;
+    height: 2px;
+    background-color: #201e1e;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+
+  &:active::before,
+  &:active::after {
+    background-color: fade(#201e1e, 30%);
+  }
+}
+
+//.main-navigation__toggle--nojs {
+//  display: none;
+//}
+//<--кнопка закрытия меню "крестик"
