@@ -3,7 +3,7 @@
   align-items: center;
   margin: 0;
   padding-bottom: 20px;
-  color: #63d1bb;
+  color: @company-color-light;
   font-size: 17px;
   text-transform: uppercase;
 
@@ -14,7 +14,7 @@
     width: 1%;
     height: 1px;
     margin-left: 20px;
-    background-color: #63d1bb;
+    background-color: @company-color-light;
   }
 
   &--no-bottom {
@@ -40,9 +40,9 @@
     width: 40px;
     height: 40px;
     margin-right: 22px;
-    border: 2px solid #444444;
+    border: 2px solid @text-light;
     border-radius: 50%;
-    background-color: #ffffff;
+    background-color: @light;
     transition: 0.4s;
   }
 
@@ -55,7 +55,7 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background-color: #62d1ba;
+    background-color: @checkbox-hover;
     filter: opacity(0);
     transition: 0.4s;
   }
@@ -82,20 +82,20 @@
   width: 100%;
   min-height: 50px;
   margin-bottom: 30px;
-  color: #444444;
+  color: @text-light;
   .normal-font(19px; 19px; 400);
   border: none;
-  box-shadow: inset 0 -2px 0 #000000;
+  box-shadow: inset 0 -2px 0 @dark;
   outline: none;
 
   &:hover,
   &:focus {
-    box-shadow: inset 0 -2px 0 #62d1ba;
+    box-shadow: inset 0 -2px 0 @checkbox-hover;
   }
 }
 
 .form__text-input::placeholder {
-  color: fade(#444444, 30);
+  color: fade(@text-light, 30);
   .normal-font(17px; 18px; 400);
 }
 
@@ -105,16 +105,16 @@
   min-height: 142px;
   padding: 15px;
   margin-bottom: 15px;
-  color: fade(#444444, 30);
+  color: fade(@text-light, 30);
   .normal-font(17px; 18px; 400);
-  border: 2px solid #444444;
-  background-color: #ffffff;
+  border: 2px solid @text-light;
+  background-color: @light;
 }
 
 .form__footnote {
   margin: 0 0 25px 0;
   padding: 0;
-  color: #444444;
+  color: @text-light;
   .normal-font(14px; 16px; 400);
 }
 
