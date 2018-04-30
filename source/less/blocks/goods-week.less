@@ -1,8 +1,10 @@
 .goods-week {
+  width: @mobile-content-width;
+  .center-margin();
   padding-top: 32px;
   padding-bottom: 35px;
   color: @text-light;
-  .normal-font(15px; 24px; 400);
+  .normal-font(15px; 20px; 400);
 }
 
 .goods-week__mark {
@@ -12,13 +14,19 @@
   text-transform: uppercase;
 }
 
+.goods-week__mark br {
+  display: none;
+}
+
 .goods-week__description {
   margin: 0 0 30px 0;
   padding: 0;
+  line-height: 24px;
 }
 
 .goods-week__characteristics {
   border-collapse: collapse;
+  width: 100%;
   margin-bottom: 25px;
 }
 
@@ -28,7 +36,7 @@
 
 .goods-week__field {
   padding-top: 7px;
-  padding-right: 21px;
+  padding-right: 20px;
   padding-bottom: 7px;
 }
 
@@ -41,4 +49,98 @@
   padding: 0;
   text-align: center;
   .normal-font(17px; 24px; 700);
+}
+
+.goods-week__order {
+  width: 100%;
+}
+
+@media (min-width: @tablet-width) {
+  .goods-week {
+    width: @tablet-content-width;
+    padding-bottom: 50px;
+  }
+
+  .goods-week__title {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  .goods-week__mark {
+    margin: 0 0 0 auto;
+    padding: 0;
+    line-height: 17px;
+  }
+
+  .goods-week__mark br {
+    display: inline;
+  }
+
+  .goods-week__info {
+    position: relative;
+    padding-right: 375px;
+  }
+
+  .goods-week__description {
+    font-size: 17px;
+    line-height: 30px;
+    margin-bottom: 50px;
+  }
+
+  .goods-week__characteristics {
+    margin-bottom: 55px;
+  }
+
+  .goods-week__field {
+    padding-right: 0;
+  }
+
+  .goods-week__price {
+    margin-bottom: 30px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .goods-week__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .goods-week {
+    box-sizing: border-box;
+    position: relative;
+    width: @desktop-content-width;
+    padding-top: 220px;
+    padding-left: 175px;
+    padding-bottom: 70px;
+  }
+
+  .goods-week__title {
+    position: absolute;
+    top: 115px;
+    left: 0;
+  }
+
+  .goods-week__mark {
+    order: -1;
+    padding-left: 45px;
+    padding-right: 55px;
+  }
+
+  .goods-week__info {
+    padding-right: 583px;
+  }
+
+  .goods-week__description {
+    margin-bottom: 65px;
+  }
+
+  .goods-week__characteristics {
+    margin-bottom: 110px;
+  }
 }

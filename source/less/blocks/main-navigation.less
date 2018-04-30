@@ -26,15 +26,16 @@
     height: 2px;
     background-color: @hamburger-toggle;
     box-shadow: 0 7px 0 0 @hamburger-toggle,
-      0 14px 0 0 @hamburger-toggle;
+    0 14px 0 0 @hamburger-toggle;
   }
 
   &:active::before {
     background-color: fade(@hamburger-toggle, 30%);
     box-shadow: 0 7px 0 0 fade(@hamburger-toggle, 30%),
-      0 14px 0 0 fade(@hamburger-toggle, 30%);
+    0 14px 0 0 fade(@hamburger-toggle, 30%);
   }
 }
+
 //--menu button "hamburger"
 //close button for menu "cross" --
 .main-navigation__toggle--opened {
@@ -70,3 +71,24 @@
 //  display: none;
 //}
 //<--кнопка закрытия меню "крестик"
+
+@media (min-width: @tablet-width) {
+  .main-navigation {
+    //width: @tablet-width;
+    //.center-margin();
+  }
+
+  .main-navigation__toggle {
+    display: none;
+  }
+
+  .main-navigation__list {
+    display: flex;
+    flex-wrap: wrap;
+    background: @header-bg;
+  }
+
+  .main-navigation__list--inner {
+    background: @title-bg;
+  }
+}

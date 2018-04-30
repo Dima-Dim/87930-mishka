@@ -4,5 +4,19 @@
 }
 
 .order__description {
-  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+
+@media (min-width: @tablet-width) {
+  .order {
+    font-size: 19px;
+    line-height: 19px;
+  }
+
+  .order__description {
+    width: @tablet-content-width;
+    font-size: 17px;
+    line-height: 30px;
+    margin-bottom: 50px;
+  }
 }

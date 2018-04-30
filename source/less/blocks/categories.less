@@ -14,10 +14,43 @@
 .categories__link {
   display: flex;
   align-items: center;
-  width: 110px;
-  height: 103px;
+  width: @mobile-content-width;
+  min-height: 103px;
+  .center-margin();
   padding-left: 28px;
   color: @light;
   .normal-font(19px; 24px; 700);
   text-decoration: none;
+}
+
+@media (min-width: @tablet-width) {
+  .categories {
+    background: @header-bg;
+  }
+
+  .categories__list {
+    display: flex;
+    width: @tablet-content-width;
+    .center-margin();
+  }
+
+  .categories__item {
+    min-width: 334px;
+  }
+
+  .categories__link {
+    min-height: 119px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .categories__list {
+    width: @desktop-content-width;
+  }
+
+  .categories__item {
+    min-width: 525px;
+  }
 }

@@ -41,3 +41,45 @@
   color: @text-light;
   .normal-font(13px; 24px; 400);
 }
+
+@media (min-width: @tablet-width) {
+  .page__wrapper {
+    padding-left: @wrapper-t;
+    padding-right: @wrapper-t;
+  }
+
+  .page__title-h1 {
+    font-size: 43px;
+    line-height: 50px;
+  }
+
+  .page__title-h1--inner {
+    margin-bottom: 70px;
+  }
+
+  .page__title-h2 {
+    font-size: 43px;
+    line-height: 50px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .page__wrapper {
+    padding-left: @wrapper-d;
+    padding-right: @wrapper-d;
+  }
+
+  .page__title-h1 {
+    font-size: 53px;
+    line-height: 57px;
+  }
+
+  .page__title-h1--inner {
+    margin-bottom: 128px;
+  }
+
+  .page__title-h2 {
+    font-size: 53px;
+    line-height: 57px;
+  }
+}

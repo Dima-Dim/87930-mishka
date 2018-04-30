@@ -1,10 +1,40 @@
+.about-us {
+  width: @mobile-content-width;
+  .center-margin();
+  padding-top: 30px;
+  padding-bottom: 55px;
+}
+
 .about-us__list {
   .list();
-  padding-bottom: 55px;
   color: @dark;
   .normal-font(17px; 20px; 700);
 }
 
 .about-us__item {
   padding-top: 60px;
+}
+
+@media (min-width: @tablet-width) {
+  .about-us {
+    width: @tablet-content-width;
+    padding-top: 55px;
+    padding-bottom: 80px;
+  }
+
+  .about-us__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .about-us__item {
+    width: 295px;
+    padding-right: 35px;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .about-us {
+    width: 700px;
+  }
 }
