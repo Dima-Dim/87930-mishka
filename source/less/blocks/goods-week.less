@@ -1,10 +1,26 @@
 .goods-week {
-  width: @mobile-content-width;
-  .center-margin();
+  position: relative;
+  width: 100%;
   padding-top: 32px;
   padding-bottom: 35px;
   color: @text-light;
   .normal-font(15px; 20px; 400);
+}
+
+.goods-week::after {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  height: 6px;
+  background-image: url("../img/zigzag-part-desktop.svg");
+  background-position: center;
+  overflow: hidden;
+}
+
+.goods-week__title {
+  width: @mobile-content-width;
+  .center-margin();
 }
 
 .goods-week__mark {
@@ -16,6 +32,11 @@
 
 .goods-week__mark br {
   display: none;
+}
+
+.goods-week__info {
+  width: @mobile-content-width;
+  .center-margin();
 }
 
 .goods-week__description {
@@ -40,7 +61,9 @@
   padding-bottom: 7px;
 }
 
-.goods-week__image {
+.goods-week__info picture {
+  width: 260px;
+  height: 315px;
   margin-bottom: 25px;
 }
 
@@ -57,11 +80,18 @@
 
 @media (min-width: @tablet-width) {
   .goods-week {
-    width: @tablet-content-width;
+    width: 100%;
     padding-bottom: 50px;
   }
 
+  .goods-week::after {
+    bottom: 0;
+    height: 17px;
+    background-position: center;
+  }
+
   .goods-week__title {
+    width: @tablet-content-width;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -80,6 +110,8 @@
 
   .goods-week__info {
     position: relative;
+    box-sizing: border-box;
+    width: @tablet-content-width;
     padding-right: 375px;
   }
 
@@ -103,10 +135,12 @@
     line-height: 24px;
   }
 
-  .goods-week__image {
+  .goods-week__info picture {
     position: absolute;
     top: 0;
     right: 0;
+    width: 333px;
+    height: 404px;
   }
 }
 
@@ -115,25 +149,36 @@
     box-sizing: border-box;
     position: relative;
     width: @desktop-content-width;
-    padding-top: 220px;
-    padding-left: 175px;
+    .center-margin();
+    padding-top: 55px;
     padding-bottom: 70px;
   }
 
   .goods-week__title {
-    position: absolute;
-    top: 115px;
-    left: 0;
+    width: @desktop-content-width;
   }
 
   .goods-week__mark {
+    width: 175px;
+    margin: 0;
+    text-align: center;
     order: -1;
-    padding-left: 45px;
-    padding-right: 55px;
   }
 
   .goods-week__info {
-    padding-right: 583px;
+    position: static;
+    width: 525px;
+    margin: 0;
+    padding-left: 175px;
+    padding-right: 0;
+  }
+
+  .goods-week__info picture {
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 525px;
+    height: 636px;
   }
 
   .goods-week__description {

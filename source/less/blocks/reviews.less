@@ -1,18 +1,31 @@
 .reviews {
-  display: flex;
-  flex-wrap: wrap;
-  width: @mobile-content-width;
+  position: relative;
+  width: 100%;
   .center-margin();
   padding-bottom: 45px;
 }
 
+.reviews::after {
+  position: absolute;
+  bottom: 0;
+  content: "";
+  width: 100%;
+  height: 6px;
+  background-image: url("../img/zigzag-part-desktop.svg");
+  background-position: center;
+  overflow: hidden;
+}
+
 .reviews__title {
+  width: @mobile-content-width;
+  .center-margin();
   padding-bottom: 35px;
 }
 
 .reviews__item {
+  width: @mobile-content-width;
+  .center-margin();
   padding: 0;
-  margin: 0;
 }
 
 .reviews__text {
@@ -34,10 +47,17 @@
   .normal-font(17px; 30px; 400);
 }
 
-.reviews__button {
-  width: 40.6vw;
-  height: 52px;
+.reviews__toggles {
+  display: flex;
+  flex-wrap: wrap;
+  width: @mobile-content-width;
+  .center-margin();
   margin-bottom: 35px;
+}
+
+.reviews__button {
+  width: 130px;
+  height: 52px;
   border: 1px solid @goods-border;
   background-color: @light;
 }
@@ -46,18 +66,52 @@
   border-left: none;
 }
 
+.reviews__button--prev {
+  margin-left: auto;
+}
+
+.reviews__button--next {
+  margin-right: auto;
+}
+
 @media (min-width: @tablet-width) {
   .reviews {
     position: relative;
-    width: @tablet-content-width;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: @tablet-width;
+    max-width: 100%;
+    .center-margin();
     padding-top: 80px;
-    padding-bottom: 50px;
+    padding-bottom: 120px;
+    padding-left: 47px;
+    padding-right: 47px;
     margin-bottom: 65px;
+    background-image: url("../img/review@1x.jpg");
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+  }
+
+  .reviews::after {
+    width: 100%;
+    height: 16px;
+    left: 0;
+    background-position: center;
+    overflow: hidden;
   }
 
   .reviews__title {
+    width: 440px;
+    margin-left: 0;
+    margin-right: auto;
     padding-bottom: 60px;
     order: -2;
+  }
+
+  .reviews__item {
+    width: @tablet-content-width;
+    .center-margin();
   }
 
   .reviews__text {
@@ -77,9 +131,9 @@
     order: -1;
   }
 
-  .reviews__button {
+  .reviews__toggles {
     position: absolute;
-    bottom: 50px; // reviews padding-bottom
+    bottom: 120px; // reviews padding-bottom
     right: @wrapper-t;
     margin: 0;
     padding: 0;
@@ -89,5 +143,12 @@
 @media (min-width: @desktop-width) {
   .reviews {
     width: @desktop-content-width;
+    padding-left: 174px;
+    padding-right: 0;
+  }
+
+  .reviews__title,
+  .reviews__item {
+    margin-left: 0;
   }
 }

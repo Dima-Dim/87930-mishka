@@ -5,10 +5,27 @@
 .categories__item {
   color: @light;
   background-color: @company-color-light;
+  transition: 0.2s;
 }
 
 .categories__item:nth-child(2n) {
   background-color: @company-color-dark;
+}
+
+.categories__item:hover,
+.categories__item:focus {
+  margin-top: -5px;
+  padding-bottom: 5px;
+  background-color: @categories-item-hover;
+}
+
+.categories__item:active .categories__link {
+  color: fade(@light, 30);
+}
+
+.categories__item:nth-child(2n):hover,
+.categories__item:nth-child(2n):focus {
+  background-color: @mail-link-hover;
 }
 
 .categories__link {
@@ -21,11 +38,25 @@
   color: @light;
   .normal-font(19px; 24px; 700);
   text-decoration: none;
+  transition: 0.4s;
 }
 
 @media (min-width: @tablet-width) {
   .categories {
+    width: 100%;
+    position: relative;
+    padding-bottom: 12px;
     background: @header-bg;
+  }
+
+  .categories::after {
+    position: absolute;
+    bottom: 0;
+    content: "";
+    width: 100%;
+    height: 23px;
+    background-image: url("../img/volna-part-desktop.svg");
+    background-position: center;
   }
 
   .categories__list {
@@ -46,6 +77,15 @@
 }
 
 @media (min-width: @desktop-width) {
+  .categories {
+    padding-bottom: 17px;
+    margin-bottom: 55px;
+  }
+
+  .categories::after {
+    height: 34px;
+  }
+
   .categories__list {
     width: @desktop-content-width;
   }

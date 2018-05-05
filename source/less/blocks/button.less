@@ -13,4 +13,15 @@
   text-decoration: none;
   border: 2px solid @text-light;
   background-color: @light;
+  transition: 0.4s;
+}
+
+.button:hover,
+.button:focus {
+  color: @light;
+  background-color: @text-light ;
+}
+
+.button:active {
+  color: fade(@light, 30);
 }

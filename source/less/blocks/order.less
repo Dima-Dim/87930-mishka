@@ -4,13 +4,24 @@
 }
 
 .order__description {
+  width: @mobile-content-width;
+  .center-margin();
   margin-bottom: 25px;
+}
+
+.order__form {
+  width: @mobile-content-width;
+  .center-margin();
 }
 
 @media (min-width: @tablet-width) {
   .order {
     font-size: 19px;
     line-height: 19px;
+  }
+
+  .order__form {
+    width: 100%;
   }
 
   .order__description {
