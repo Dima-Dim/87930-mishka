@@ -28,10 +28,11 @@
   .center-margin();
 }
 
-.modal-cart form {
+.modal-cart__list-size {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  .list();
 }
 
 .modal-cart__radio {
@@ -39,6 +40,17 @@
   height: 52px;
   margin: 0;
   border: 2px solid fade(@text-light, 10);
+}
+
+.modal-cart__radio:hover,
+.modal-cart__radio:focus {
+  color: @text-light;
+  background-color: @light;
+  border: 2px solid fade(@text-light, 30);
+}
+
+.modal-cart__radio:active {
+  border: 2px solid @checkbox-hover;
 }
 
 .modal-cart__add {

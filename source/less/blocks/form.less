@@ -22,6 +22,10 @@
   }
 }
 
+.form__list {
+  .list();
+}
+
 .form__radio-label {
   display: flex;
   position: relative;
@@ -61,6 +65,22 @@
   }
 }
 
+.form__radio-label:hover,
+.form__radio-label:focus,
+.form__checkbox-label:hover,
+.form__checkbox-label:focus {
+  &::before {
+    border: 2px solid @checkbox-hover;
+  }
+}
+
+.form__radio-label:active,
+.form__checkbox-label:active {
+  &::before {
+    border: 2px solid fade(@text-light, 30);
+  }
+}
+
 .form__radio-input:checked + .form__radio-label::after {
   filter: opacity(1);
 }
@@ -87,6 +107,7 @@
   border: none;
   box-shadow: inset 0 -2px 0 @dark;
   outline: none;
+  transition: 0.4s;
 
   &:hover,
   &:focus {
@@ -109,6 +130,17 @@
   .normal-font(17px; 18px; 400);
   border: 2px solid @text-light;
   background-color: @light;
+  transition: 0.4s;
+  outline: none;
+}
+
+.form__textarea:hover,
+.form__textarea:focus {
+  border: 2px solid @checkbox-hover;
+}
+
+.form__textarea:active {
+  border: 2px solid @checkbox-hover;
 }
 
 .form__footnote {
@@ -126,25 +158,28 @@
   .order__form {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .form__field-group {
     position: relative;
     box-sizing: border-box;
     width: 100%;
-    max-width: @tablet-content-width;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     .center-margin();
     padding-top: 50px;
-    padding-left: 167px;
     padding-bottom: 50px;
   }
 
+  .form__field-group:nth-of-type(2n) {
+    background-color: @form-bg;
+  }
+
   .form__title {
-    position: absolute;
-    top: 69px;
-    left: 0;
-    max-width: 165px;
-    padding-bottom: 0;
+    width: 165px;
+    align-self: flex-start;
 
     &::after {
       display: none;
@@ -153,6 +188,12 @@
 
   .form__title:nth-of-type(2) {
     top: 140px;
+  }
+
+  .form__list,
+  .form__textarea {
+    width: 500px;
+    flex-shrink: 0;
   }
 
   .form__radio-label {
@@ -171,7 +212,7 @@
     }
   }
 
-  .form__field-group--checkboxes {
+  .form__field-group--checkboxes ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -182,10 +223,9 @@
     padding-bottom: 24px;
   }
 
-  .form__field-group--name {
+  .form__field-group--name li {
     display: flex;
     flex-wrap: wrap;
-    padding-bottom: 30px;
   }
 
   .form__text-label {
@@ -202,9 +242,16 @@
     padding-left: 18px;
   }
 
+  .form__field-group--tel-email div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
   .form__text-input--tel,
   .form__text-input--email {
     width: 100%;
+    background-color: transparent;
   }
 
   .form__field-group--email {
@@ -215,15 +262,22 @@
     top: 10px;
   }
 
+  .form__footer {
+    display: flex;
+    width: @tablet-content-width;
+  }
+
   .form__button {
-    width: 29.95vw;
+    width: 230px;
     height: 52px;
-    margin-left: 0;
+    margin: unset;
   }
 
   .form__footnote {
     align-self: center;
+    width: 440px;
     margin: 0;
+    text-align: right;
     font-size: 17px;
     line-height: 30px;
     order: 2;
@@ -231,16 +285,24 @@
 }
 
 @media (min-width: @desktop-width) {
-  .form__field-group {
-    max-width: @desktop-content-width;
-    padding-left: 175px;
+  .form__field-group--textarea {
+    width: @desktop-content-width;
+    padding-right: 175px;
   }
 
   .form__title {
-    left: 64px;
+    box-sizing: border-box;
+    width: 175px;
+    margin-top: 17px;
+    padding-left: 60px;
   }
 
-  .form__field-group--checkboxes {
+  .form__list,
+  .form__textarea {
+    width: 875px;
+  }
+
+  .form__field-group--checkboxes ul {
     justify-content: flex-start;
   }
 
@@ -248,9 +310,9 @@
     width: 260px;
   }
 
-  .form__field-group--name {
-    max-width: 875px;
-    margin-left: 0;
+  .form__field-group--name ul {
+    box-sizing: border-box;
+    padding-right: 175px;
   }
 
   .form__text-input {
@@ -258,17 +320,22 @@
   }
 
   .form__text-input--tel,
-  .form__text-input--email,
+  .form__text-input--email {
+    width: 700px;
+  }
+
   .form__textarea {
     width: 700px;
   }
 
-  .form__button {
-    width: 20vw;
-    margin-left: 175px;
+  .form__footer {
+    box-sizing: border-box;
+    width: @desktop-content-width;
+    padding-left: 175px;
+    padding-right: 175px;
   }
 
   .form__footnote {
-    margin-right: 175px;
+    width: 465px;
   }
 }

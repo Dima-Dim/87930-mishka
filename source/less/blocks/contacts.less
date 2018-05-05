@@ -1,5 +1,5 @@
 .contacts {
-  width: @mobile-content-width;
+  max-width: 100%;
   .center-margin();
   padding-top: 40px;
   padding-bottom: 39px;
@@ -9,14 +9,25 @@
   padding-bottom: 40px;
   color: @dark;
   font-size: 18px;
+  padding-left: 29px;
+  padding-right: 29px;
 }
 
 .contacts table {
+  table-layout: fixed;
+  width: @mobile-content-width;
   margin-bottom: 10px;
+  .center-margin();
+}
+
+.contacts tr {
+  display: flex;
+  justify-content: space-between;
 }
 
 .contacts__text {
   min-width: 50px;
+  max-width: 180px;
   padding-bottom: 30px;
   vertical-align: top;
   color: @text-light;
@@ -24,16 +35,36 @@
 }
 
 .contacts__text:first-child {
-  padding-right: 30px;
+  max-width: 46px;
+}
+
+.contacts__text--link a {
+  padding-bottom: 5px;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid @checkbox-hover;
+}
+
+.contacts__text--link a:hover,
+.contacts__text--link a:focus {
+  color: @mail-link-hover;
+  border-bottom: 1px solid @mail-link-hover;
+}
+
+.contacts__text--link a:active {
+  color: fade(@mail-link-hover, 30);
+  border-bottom: 1px solid fade(@mail-link-hover, 10);
 }
 
 .contacts__map {
+  display: block;
+  .center-margin();
   padding-bottom: 35px;
+  overflow: hidden;
 }
 
 @media (min-width: @tablet-width) {
   .contacts {
-    width: @tablet-content-width;
     padding-top: 70px;
     padding-bottom: 57px;
   }
@@ -41,13 +72,17 @@
   .contacts__title {
     .normal-font(43px; 50px; 700);
     padding-bottom: 60px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   .contacts__text {
+    max-width: 250px;
     font-size: 17px;
   }
 
   .contacts table {
+    width: @tablet-content-width;
     margin-bottom: 30px;
   }
 
@@ -58,6 +93,7 @@
   }
 
   .contacts__text:first-child {
+    max-width: 75px;
     padding-right: 25px;
   }
 
