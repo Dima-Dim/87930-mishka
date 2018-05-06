@@ -4,5 +4,54 @@
 }
 
 .social-buttons__list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 78px;
   .list();
+}
+
+.social-buttons__item {
+  width: 60px;
+  text-align: center;
+}
+
+.social-buttons__button {
+  display: block;
+  width: 100%;
+}
+
+.social-buttons__button svg {
+  fill: @dark;
+  transition: 0.4s;
+}
+
+.social-buttons__button:hover svg,
+.social-buttons__button:focus svg {
+  fill: @mail-link-hover;
+}
+
+.social-buttons__button:active svg {
+  filter: opacity(0.3);
+}
+
+.social-buttons__button--instagram svg {
+  width: 22px;
+  height: 21px;
+}
+
+.social-buttons__button--facebook svg {
+  width: 15px;
+  height: 28px;
+}
+
+.social-buttons__button--twitter svg {
+  width: 23px;
+  height: 20px;
+}
+
+@media (min-width: @tablet-width) {
+  .social-buttons {
+    border: none;
+  }
 }

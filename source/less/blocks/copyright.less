@@ -6,7 +6,10 @@
 }
 
 .copyright__link {
+  display: flex;
+  align-items: center;
   text-decoration: none;
+  transition: 0.4s;
 }
 
 .copyright__link:active {
@@ -16,4 +19,21 @@
 .copyright__title {
   color: @dark;
   .normal-font(19px; 19px; 700);
+}
+
+.copyright__link svg {
+  width: 27px;
+  height: 34px;
+  margin-left: 30px;
+  fill: @company-color-light;
+  transition: 0.4s;
+}
+
+.copyright__link:hover svg,
+.copyright__link:focus svg {
+  fill: @mail-link-hover;
+}
+
+.copyright__link:active svg {
+  filter: opacity(0.3);
 }
