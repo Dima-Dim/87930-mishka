@@ -94,6 +94,7 @@ gulp.task("html", function () {
         .pipe(gp.posthtml([
             include()
         ]))
+        .pipe(gp.htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest(path.build.root));
 });
 
