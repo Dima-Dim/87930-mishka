@@ -104,6 +104,7 @@
   margin-bottom: 20px;
   color: @text-light;
   .normal-font(19px; 19px; 400);
+  background: transparent;
   border: none;
   box-shadow: inset 0 -2px 0 @dark;
   outline: none;
@@ -118,6 +119,39 @@
 .form__text-input::placeholder {
   color: fade(@text-light, 30);
   .normal-font(17px; 18px; 400);
+}
+
+.form__list--tel,
+.form__list--email {
+  position: relative;
+}
+
+.form__list--tel svg,
+.form__list--email svg {
+  position: absolute;
+  top: calc(~"50% - 15px");
+  right: 0;
+  z-index: -1;
+  filter: opacity(0.2);
+  transition: 0.4s;
+}
+
+.form__list--tel svg {
+  width: 25px;
+  height: 24px;
+}
+
+.form__list--email svg {
+  width: 32px;
+  height: 32px;
+}
+
+.form__list--tel:hover svg,
+.form__list--tel:focus svg,
+.form__list--email:hover svg,
+.form__list--email:focus svg {
+  fill: @checkbox-hover;
+  filter: opacity(1);
 }
 
 .form__textarea {
@@ -262,6 +296,13 @@
     top: 10px;
   }
 
+  .form__list--tel svg,
+  .form__list--email svg {
+    z-index: 0;
+    top: calc(~"50% - 25px");
+    right: 22px;
+  }
+
   .form__footer {
     display: flex;
     width: @tablet-content-width;
@@ -322,6 +363,11 @@
   .form__text-input--tel,
   .form__text-input--email {
     width: 700px;
+  }
+
+  .form__list--tel svg,
+  .form__list--email svg {
+    right: 175px;
   }
 
   .form__textarea {

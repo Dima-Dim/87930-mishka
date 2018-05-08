@@ -66,6 +66,21 @@
   border-left: none;
 }
 
+.reviews__button svg {
+  width: 50px;
+  height: 26px;
+  fill: @dark;
+}
+
+.reviews__button:hover svg,
+.reviews__button:focus svg {
+  filter: opacity(0.6);
+}
+
+.reviews__button:active svg {
+  filter: opacity(0.3);
+}
+
 .reviews__button--prev {
   margin-left: auto;
 }
@@ -138,6 +153,10 @@
     right: @wrapper-t;
     margin: 0;
     padding: 0;
+  }
+
+  .reviews__button {
+    border: none;
   }
 }
 
