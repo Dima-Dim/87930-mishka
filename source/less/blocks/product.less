@@ -8,12 +8,34 @@
   margin-bottom: 25px;
 }
 
+.product__description-wrap {
+  transition: 0.4s;
+}
+
+.product__description-wrap:hover,
+.product__description-wrap:focus {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product__description-wrap:active {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
 .product__title {
   color: @text-main;
   margin-left: 28px;
   padding-bottom: 1px;
   .normal-font(17px; 24px; 700);
   text-decoration: none;
+}
+
+.product__title:hover,
+.product__title:focus {
+  opacity: 0.6;
+}
+
+.product__title:active {
+  opacity: 0.3;
 }
 
 .product__description {
@@ -70,23 +92,13 @@
 
 @media (min-width: @tablet-width) {
   .product {
-    position: relative;
-    box-sizing: border-box;
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
+    box-sizing: border-box;
     min-height: 334px;
-    padding-top: 25px;
-    padding-left: 334px;
   }
 
-  .product__link--img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 334px;
-    height: 334px;
+  .product__link {
+    margin-top: 0;
   }
 
   .product__image {
@@ -94,8 +106,17 @@
     height: 334px;
   }
 
-  .product__link {
-    margin-top: 0;
+  .product__description-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 334px;
+    padding-top: 25px;
+  }
+
+  .product__link--img {
+    width: 334px;
+    height: 334px;
   }
 
   .product__title {
@@ -114,12 +135,15 @@
   }
 
   .product__buy {
-    margin-top: auto;
+    bottom: 0;
+    width: 268px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .product {
+    display: flex;
+    flex-direction: column;
     width: 316px;
     padding: 0 0 0 0;
     margin-bottom: 57px;
@@ -129,7 +153,6 @@
     position: static;
     width: 316px;
     height: 462px;
-    margin-bottom: 25px;
   }
 
   .product__image {
@@ -137,7 +160,16 @@
     height: 462px;
   }
 
+  .product__description-wrap {
+    flex-grow: 1;
+    width: 316px;
+  }
+
   .product__description {
     margin-bottom: 15px;
+  }
+
+  .product__buy {
+    margin-top: auto;
   }
 }
