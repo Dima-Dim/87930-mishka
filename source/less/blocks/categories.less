@@ -29,11 +29,12 @@
 }
 
 .categories__link {
+  box-sizing: border-box;
   position: relative;
   display: flex;
   align-items: center;
   width: @mobile-content-width;
-  height: 60px;
+  max-width: 100%;
   min-height: 103px;
   .center-margin();
   padding-left: 28px;
@@ -42,6 +43,16 @@
   text-decoration: none;
   transition: 0.4s;
 }
+
+//For work align-items: center in IE11--
+.categories__link::after {
+  content: "";
+  display: block;
+  min-height: inherit;
+  font-size: 0;
+  overflow: hidden;
+}
+//--For work align-items: center in IE11
 
 .categories__link p {
   align-self: center;
@@ -52,28 +63,30 @@
 .categories__link svg {
   position: absolute;
   top: calc(~"50% - 31px");
+  right: 0;
   fill: @categories-icon;
-  filter: opacity(0.5);
+  opacity: 0.5;
   transition: 0.4s;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 .categories__link:hover svg,
 .categories__link:focus svg {
-  filter: opacity(0.7);
+  opacity: 0.7;
 }
 
 .categories__link:active svg {
-  filter: opacity(0.3);
+  opacity: 0.3;
 }
 
 .categories__item--interior svg {
-  right: 36px;
   width: 40px;
   height: 62px;
 }
 
 .categories__item--toy svg {
-  right: 27px;
+  right: -8px;
   width: 60px;
   height: 60px;
 }
@@ -94,6 +107,9 @@
     height: 23px;
     background-image: url("../img/volna-part-desktop.svg");
     background-position: center;
+    background-size: 78px 23px;
+    background-repeat: repeat-x;
+    overflow: hidden;
   }
 
   .categories__list {
@@ -121,6 +137,7 @@
 
   .categories::after {
     height: 34px;
+    background-size: 115px 34px;
   }
 
   .categories__list {

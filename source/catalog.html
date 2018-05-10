@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <title>Каталог товаров интернет-магазина милых вещиц для дома ручной работы Мишка</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="preload" href="../fonts/opensans.woff2" as="font">
-  <link rel="preload" href="../fonts/opensansbold.woff2" as="font">
+  <link rel="preload" href="fonts/opensans.woff2" as="font">
+  <link rel="preload" href="fonts/opensansbold.woff2" as="font">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 <body class="page">
@@ -19,7 +19,7 @@
     <div class="main-navigation__wrapper main-navigation__wrapper--closed main-navigation__wrapper--nojs">
       <ul class="menu-list main-navigation__list main-navigation__list--inner">
         <li class="menu-list__item menu-list__item--logo">
-          <a class="menu-list__link">
+          <a class="menu-list__link" href="index.html">
             <picture class="logo">
               <source media="(min-width: 1150px)" srcset="./img/logo-desktop.svg">
               <source media="(min-width: 768px)" srcset="./img/logo-tablet.svg">
@@ -74,15 +74,17 @@
             <img class="product__image" src="./img/photo-hare-mobile@1x.jpg" alt="Зайчик-попрыгайчик">
           </picture>
         </a>
-        <a class="product__link product__title" href="#">Зайчик-попрыгайчик</a>
-        <p class="product__description">Рост 30 см, вес 200 г</p>
-        <a class="product__buy" href="#">
-          <p class="product__price">1 200 руб.</p>
-          <svg>
-            <use xlink:href="#icon-cart"></use>
-          </svg>
-          <span class="visually-hidden">Купить</span>
-        </a>
+        <div class="product__description-wrap">
+          <a class="product__link product__title" href="#">Зайчик-попрыгайчик</a>
+          <p class="product__description">Рост 30 см, вес 200 г</p>
+          <a class="product__buy" href="#">
+            <p class="product__price">1 200 руб.</p>
+            <svg>
+              <use xlink:href="#icon-cart"></use>
+            </svg>
+            <span class="visually-hidden">Купить</span>
+          </a>
+        </div>
       </li>
       <li class="goods__item product">
         <a class="product__link product__link--img" href="#">
@@ -96,15 +98,17 @@
             <img class="product__image" src="./img/photo-bowl-mobile@1x.jpg" alt="Корзинка для белья">
           </picture>
         </a>
-        <a class="product__link product__title" href="#">Корзинка для белья</a>
-        <p class="product__description">Диаметр 15 см, высота 10 см</p>
-        <a class="product__buy" href="#">
-          <p class="product__price">690 руб.</p>
-          <svg>
-            <use xlink:href="#icon-cart"></use>
-          </svg>
-          <span class="visually-hidden">Купить</span>
-        </a>
+        <div class="product__description-wrap">
+          <a class="product__link product__title" href="#">Корзинка для белья</a>
+          <p class="product__description">Диаметр 15 см, высота 10 см</p>
+          <a class="product__buy" href="#">
+            <p class="product__price">690 руб.</p>
+            <svg>
+              <use xlink:href="#icon-cart"></use>
+            </svg>
+            <span class="visually-hidden">Купить</span>
+          </a>
+        </div>
       </li>
       <li class="goods__item product">
         <a class="product__link product__link--img" href="#">
@@ -118,15 +122,17 @@
             <img class="product__image" src="./img/photo-toys-mobile@1x.jpg" alt="Большая корзинка для игрушек">
           </picture>
         </a>
-        <a class="product__link product__title" href="#">Большая корзинка для игрушек</a>
-        <p class="product__description">Диаметр 30 см, высота 30 см</p>
-        <a class="product__buy" href="#">
-          <p class="product__price">1 500 руб.</p>
-          <svg>
-            <use xlink:href="#icon-cart"></use>
-          </svg>
-          <span class="visually-hidden">Купить</span>
-        </a>
+        <div class="product__description-wrap">
+          <a class="product__link product__title" href="#">Большая корзинка для игрушек</a>
+          <p class="product__description">Диаметр 30 см, высота 30 см</p>
+          <a class="product__buy" href="#">
+            <p class="product__price">1 500 руб.</p>
+            <svg>
+              <use xlink:href="#icon-cart"></use>
+            </svg>
+            <span class="visually-hidden">Купить</span>
+          </a>
+        </div>
       </li>
     </ul>
   </section>
