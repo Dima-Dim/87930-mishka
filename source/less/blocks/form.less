@@ -35,7 +35,6 @@
   position: relative;
   align-items: center;
   min-height: 40px;
-  //padding-bottom: 20px;
   margin-bottom: 11px;
   transition: 0.4s;
 
@@ -60,7 +59,7 @@
     position: absolute;
     content: "";
     left: 12px;
-    top: 5px;
+    top: 14px;
     box-sizing: border-box;
     width: 16px;
     height: 16px;
@@ -243,12 +242,6 @@
 }
 
 @media (min-width: @tablet-width) {
-  .order__form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
   .form__field-group {
     position: relative;
     box-sizing: border-box;
@@ -258,7 +251,7 @@
     justify-content: center;
     .center-margin();
     padding-top: 50px;
-    padding-bottom: 50px;
+    margin-bottom: 28px;
   }
 
   .form__field-group:nth-of-type(2n) {
@@ -267,6 +260,7 @@
 
   .form__title {
     width: 165px;
+    margin-top: 17px;
     align-self: flex-start;
 
     &::after {
@@ -284,20 +278,37 @@
     flex-shrink: 0;
   }
 
+  .form__item:first-of-type .form__radio-label {
+    &::before {
+      margin-top: 1px;
+    }
+
+    &::after {
+      top: 17px;
+    }
+  }
+
   .form__radio-label {
     min-height: 52px;
+    margin-bottom: 22px;
 
     &::before {
       width: 52px;
       height: 52px;
+      margin-right: 28px;
     }
 
     &::after {
       left: 15px;
-      top: 16px;
+      top: 18px;
       width: 22px;
       height: 22px;
     }
+  }
+
+  .form__field-group--checkboxes {
+    padding-bottom: 26px;
+    margin-bottom: 0px;
   }
 
   .form__field-group--checkboxes ul {
@@ -308,7 +319,7 @@
 
   .form__checkbox-label {
     width: 238px;
-    padding-bottom: 24px;
+    margin-bottom: 24px;
   }
 
   .form__field-group--name li {
@@ -328,12 +339,22 @@
 
   .form__text-input::placeholder {
     padding-left: 18px;
+    font-size: 19px;
+    line-height: 19px;
   }
 
   .form__field-group--tel-email div {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .form__list--tel {
+    margin-bottom: 1px;
+  }
+
+  .form__list--email {
+    margin-bottom: 28px;
   }
 
   .form__text-input--tel,
@@ -357,9 +378,20 @@
     right: 22px;
   }
 
+  .form__field-group--textarea {
+    margin-bottom: 39px;
+    padding-top: 21px;
+  }
+
+  .form__textarea {
+    font-size: 19px;
+    line-height: 19px;
+  }
+
   .form__footer {
     display: flex;
     width: @tablet-content-width;
+    padding-left: 50px;
   }
 
   .form__button {
