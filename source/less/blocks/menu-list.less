@@ -10,6 +10,10 @@
   box-shadow: 0 1px 0 @goods-border, inset 0 1px 0 @goods-border;
 }
 
+.menu-list__item--closed {
+  display: none;
+}
+
 .menu-list__item svg {
   position: absolute;
   top: calc(~"50% - 9px");
@@ -20,9 +24,9 @@
   transition: 0.4s;
 }
 
-.menu-list__item span {
-  pointer-events: none;
-}
+//.menu-list__item span {
+//  pointer-events: none;
+//}
 
 .menu-list__item:hover svg,
 .menu-list__item:focus svg {
@@ -32,6 +36,11 @@
 
 .menu-list__item:active svg {
   opacity: 0.3;
+}
+
+.menu-list__item--logo a {
+  justify-content: center;
+  padding-left: 0;
 }
 
 .menu-list__item--new,
@@ -51,7 +60,7 @@
 }
 
 .menu-list__item--cart svg {
-  width: 21px;
+  width: 23px;
   height: 18px;
 }
 
@@ -100,11 +109,11 @@
     max-width: 100%;
     margin: 0;
     box-shadow: none;
-    min-height: 65px;
+    min-height: 55px;
   }
 
   .menu-list__item--logo {
-    width: 47vw;
+    width: 46.3vw;
     min-height: 88px;
     flex-grow: 1;
     background: @light;
@@ -113,12 +122,14 @@
   }
 
   .menu-list__item--logo a {
+    margin-top: 1px;
     margin-left: 0;
-    padding-left: @wrapper-t;
+    padding-left: 6.3vw;
     padding-right: @wrapper-t;
   }
 
   .menu-list__item--catalog {
+    display: block;
     .normal-font(15px);
   }
 
@@ -128,6 +139,7 @@
   }
 
   .menu-list__item--custom {
+    display: block;
     .normal-font(15px);
   }
 
@@ -136,6 +148,9 @@
   }
 
   .menu-list__item--search {
+    display: block;
+    width: 8.9vw;
+    flex-grow: 1;
     min-height: 88px;
     background: @light;
     border: 1px solid fade(@dark, 10);
@@ -143,7 +158,12 @@
     order: -1;
   }
 
-  .menu-list__item--search span {
+  .menu-list__item--search svg {
+    margin-top: 1px;
+    margin-left: 3px;
+  }
+
+  .menu-list__item--search .menu-list__link-text {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -160,6 +180,8 @@
   }
 
   .menu-list__item--cart {
+    display: block;
+    flex-grow: 1;
     box-sizing: border-box;
     min-height: 88px;
     background: @light;
@@ -170,7 +192,7 @@
   .menu-list__item--cart a {
     width: 39vw;
     padding-left: 75px;
-    padding-right: 50px;
+    padding-right: 40px;
   }
 
   .menu-list__item--delivery {
@@ -185,12 +207,18 @@
 
   .menu-list__link {
     width: initial;
-    min-height: 65px;
-    padding-left: 0;
+    min-height: 55px;
+    padding-left: 18px;
   }
 }
 
 @media (min-width: @desktop-width) {
+  .menu-list__item {
+    box-sizing: border-box;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+
   .menu-list__item--logo,
   .menu-list__item--search,
   .menu-list__item--cart {
@@ -198,9 +226,8 @@
   }
 
   .menu-list__item--logo {
-    width: 12.95vw;
-    flex-grow: 1;
-    padding-right: 5.3vw;
+    width: 25.4%;
+    padding-right: 5.5%;
   }
 
   .menu-list__item--logo a {
@@ -217,14 +244,24 @@
   }
 
   .menu-list__item--catalog {
+    width: 20%;
+    padding: 0;
     border-right: 1px solid fade(@dark, 10);
   }
 
   .menu-list__item--catalog a {
-    justify-content: left;
-    min-width: 20.34vw;
-    padding-left: @wrapper-d;
-    padding-right: 3.04vw;
+    text-align: right;
+    width: 100%;
+    padding: 0;
+  }
+
+  .menu-list__item--catalog .menu-list__link-text {
+    margin-right: 16%;
+    margin-left: auto;
+  }
+
+  .menu-list__item--custom {
+    width: 20%;
   }
 
   .menu-list__item--custom a {
@@ -233,25 +270,43 @@
     padding: 0 3.04vw 0 3.04vw;
   }
 
+  .menu-list__item--search {
+    width: 7.39%;
+  }
+
   .menu-list__item--search a {
-    width: 7.21vw;
+    width: 100%;
+  }
+
+  .menu-list__item--cart {
+    width: 27.2%;
   }
 
   .menu-list__item--cart a {
-    width: 27.47vw;
+    width: 100%;
+    padding-left: 82px;
+    padding-right: 0;
   }
 
   .menu-list__item--new,
   .menu-list__item--sale {
     display: block;
+    min-height: 59px;
     .normal-font(15px; 24px; 700);
   }
 
+  .menu-list__item--new {
+    width: 20%;
+  }
+
   .menu-list__item--new a {
-    justify-content: left;
     min-width: 20.34vw;
-    padding-left: @wrapper-d;
-    padding-right: 20px;
+    padding: 0;
+  }
+
+  .menu-list__item--new .menu-list__link-text {
+    margin-right: 14%;
+    margin-left: auto;
   }
 
   .menu-list__item--sale a {
@@ -260,8 +315,14 @@
     justify-content: left;
   }
 
+  .menu-list__item--delivery {
+    width: 27.2%;
+  }
+
   .menu-list__item--delivery a {
-    padding-right: 50px;
+    text-align: right;
+    padding-left: 35px;
+    padding-right: 5px;
   }
 
   .menu-list__link {

@@ -2,7 +2,6 @@
   max-width: 100%;
 }
 
-//menu button "hamburger" --
 .main-navigation__toggle {
   position: absolute;
   top: 32px;
@@ -12,6 +11,8 @@
   background-color: @light;
   border: none;
   cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
   z-index: 2;
 
   &:hover,
@@ -21,67 +22,18 @@
 }
 
 .main-navigation__toggle--closed {
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 20px;
-    height: 2px;
-    background-color: @hamburger-toggle;
-    box-shadow: 0 7px 0 0 @hamburger-toggle,
-      0 14px 0 0 @hamburger-toggle;
-  }
-
-  &:active::before {
-    background-color: fade(@hamburger-toggle, 30%);
-    box-shadow: 0 7px 0 0 fade(@hamburger-toggle, 30%),
-      0 14px 0 0 fade(@hamburger-toggle, 30%);
-  }
+  background-image: url("../img/menu-open.svg");
 }
 
-//--menu button "hamburger"
-//close button for menu "cross" --
 .main-navigation__toggle--opened {
-  top: 0;
-  left: 0;
-
-  &::before,
-  &::after {
-    content: "";
-    position: absolute;
-    top: 24px;
-    left: 18px;
-    width: 20px;
-    height: 2px;
-    background-color: @hamburger-toggle;
-  }
-
-  &::before {
-    transform: rotate(45deg);
-  }
-
-  &::after {
-    transform: rotate(-45deg);
-  }
-
-  &:active::before,
-  &:active::after {
-    background-color: fade(@hamburger-toggle, 30%);
-  }
+  background-image: url("../img/menu-close.svg");
 }
 
 //.main-navigation__toggle--nojs {
 //  display: none;
 //}
-//<--кнопка закрытия меню "крестик"
 
 @media (min-width: @tablet-width) {
-  .main-navigation {
-    //width: @tablet-width;
-    //.center-margin();
-  }
-
   .main-navigation__toggle {
     display: none;
   }

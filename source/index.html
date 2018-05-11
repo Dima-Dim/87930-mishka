@@ -28,31 +28,45 @@
           </a>
         </li>
         <li class="menu-list__item menu-list__item--catalog">
-          <a class="menu-list__link" href="catalog.html">Каталог товаров</a>
+          <a class="menu-list__link" href="catalog.html">
+            <p class="menu-list__link-text">Каталог товаров</p>
+          </a>
         </li>
         <li class="menu-list__item menu-list__item--custom">
-          <a class="menu-list__link" href="form.html">Вязание на заказ</a>
+          <a class="menu-list__link" href="form.html">
+            <p class="menu-list__link-text">Вязание на заказ</p>
+          </a>
         </li>
         <li class="menu-list__item menu-list__item--search">
           <svg>
             <use xlink:href="#icon-search"></use>
           </svg>
-          <a class="menu-list__link" href="search.html"><span>Поиск по сайту</span></a>
+          <a class="menu-list__link" href="search.html">
+            <p class="menu-list__link-text">Поиск по сайту</p>
+          </a>
         </li>
         <li class="menu-list__item menu-list__item--cart">
           <svg>
             <use xlink:href="#icon-cart"></use>
           </svg>
-          <a class="menu-list__link" href="cart.html">Корзина: пока пуста</a>
+          <a class="menu-list__link" href="cart.html">
+            <p class="menu-list__link-text">Корзина: пока пуста</p>
+          </a>
         </li>
         <li class="menu-list__item menu-list__item--new">
-          <a class="menu-list__link" href="new.html">Новые поступления</a>
+          <a class="menu-list__link" href="new.html">
+            <p class="menu-list__link-text">Новые поступления</p>
+          </a>
         </li>
         <li class="menu-list__item menu-list__item--sale">
-          <a class="menu-list__link" href="sale.html">Распродажа</a>
+          <a class="menu-list__link" href="sale.html">
+            <p class="menu-list__link-text">Распродажа</p>
+          </a>
         </li>
         <li class="menu-list__item menu-list__item--delivery">
-          <a class="menu-list__link" href="sale.html">Бесплатная доставка по России</a>
+          <a class="menu-list__link" href="sale.html">
+            <p class="menu-list__link-text">Бесплатная доставка по России</p>
+          </a>
         </li>
       </ul>
     </div>
@@ -66,14 +80,16 @@
     <h2 class="visually-hidden">Категории товаров</h2>
     <ul class="categories__list">
       <li class="categories__item categories__item--interior">
-        <a class="categories__link" href="#"><p>Предметы<br>интерьера</p>
+        <a class="categories__link" href="catalog.html">
+          <h3 class="categories__title">Предметы<br>интерьера</h3>
           <svg>
             <use xlink:href="#icon-interior"></use>
           </svg>
         </a>
       </li>
       <li class="categories__item categories__item--toy">
-        <a class="categories__link" href="#"><p>Детские<br>игрушки</p>
+        <a class="categories__link" href="catalog.html">
+          <h3 class="categories__title">Детские<br>игрушки</h3>
           <svg>
             <use xlink:href="#icon-toy"></use>
           </svg>
@@ -84,7 +100,7 @@
   <section class="goods-week">
     <div class="goods-week__title">
       <h2 class="page__title-h2">Вязаные корзинки</h2>
-      <h3 class="page__title-h3 goods-week__mark">Товар<br>недели</h3>
+      <h3 class="page__title-h3 goods-week__mark">Товар недели</h3>
     </div>
     <div class="goods-week__info">
       <p class="goods-week__description">Экологически чистая пряжа, ручная работа. Доступны в шести расцветках, и трех
@@ -92,7 +108,7 @@
       <table class="goods-week__characteristics">
         <tr>
           <td class="goods-week__field">Цвет:</td>
-          <td class="goods-week__field">«Тиффани»/серый</td>
+          <td class="goods-week__field goods-week__field--color-name">«Тиффани»/серый</td>
         </tr>
         <tr>
           <td class="goods-week__field">Диаметр:</td>
@@ -123,25 +139,25 @@
         <svg>
           <use xlink:href="#icon-feature-flower"></use>
         </svg>
-        Экологически чистые материалы
+        Экологически <br>чистые материалы
       </li>
       <li class="about-us__item about-us__item--money">
         <svg>
           <use xlink:href="#icon-feature-money"></use>
         </svg>
-        Скандинавский стиль по российской цене
+        Скандинавский стиль <br>по российской цене
       </li>
       <li class="about-us__item about-us__item--heart">
         <svg>
           <use xlink:href="#icon-feature-heart"></use>
         </svg>
-        Увеличивает лайки на фотографиях
+        Увеличивает лайки <br>на фотографиях
       </li>
       <li class="about-us__item about-us__item--ball">
         <svg>
           <use xlink:href="#icon-feature-ball"></use>
         </svg>
-        Связано вручную с любовью и умилением
+        Связано вручную с <br>любовью и умилением
       </li>
       <li class="about-us__item about-us__item--rocket">
         <svg>
@@ -153,7 +169,7 @@
         <svg>
           <use xlink:href="#icon-feature-gift"></use>
         </svg>
-        Поставляется в подарочной упаковке
+        Поставляется в <br>подарочной упаковке
       </li>
     </ul>
   </section>
@@ -186,7 +202,7 @@
     <svg class="contacts__icon-flag">
       <use xlink:href="#icon-flag"></use>
     </svg>
-    <table>
+    <table class="contacts__table">
       <tr>
         <td class="contacts__text">e-mail:</td>
         <td class="contacts__text contacts__text--link">
@@ -209,7 +225,7 @@
     <a class="contacts__button button" href="#">Напишите нам</a>
   </section>
 </main>
-<footer class="page-footer page__wrapper">
+<footer class="page-footer">
   <a class="page-footer__logo">
     <img class="logo logo--footer" src="./img/logo-footer.svg" width="102" height="34" alt="Логотип интернет-магазина Мишка">
   </a>
@@ -252,21 +268,21 @@
     </a>
   </section>
 </footer>
-<section class="modal-cart modal-cart--close">
+<section class="modal-cart modal-cart--closed">
   <h2 class="modal-cart__title page__title-h2">Добавить в корзину</h2>
   <p class="modal-cart__text">Выберите размер:</p>
   <form action="https://echo.htmlacademy.ru/">
     <ul class="modal-cart__list-size">
       <li>
-        <input class="visually-hidden" type="radio" name="S" id="S-size" value="S">
+        <input class="modal-cart__input" type="radio" name="size" id="S-size" value="S">
         <label class="modal-cart__radio button" for="S-size">S</label>
       </li>
       <li>
-        <input class="visually-hidden" type="radio" name="M" id="M-size" value="M">
+        <input class="modal-cart__input" type="radio" name="size" id="M-size" value="M">
         <label class="modal-cart__radio button" for="M-size">M</label>
       </li>
       <li>
-        <input class="visually-hidden" type="radio" name="L" id="L-size" value="L">
+        <input class="modal-cart__input" type="radio" name="size" id="L-size" value="L">
         <label class="modal-cart__radio button" for="L-size">L</label>
       </li>
     </ul>

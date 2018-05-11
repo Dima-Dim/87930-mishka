@@ -11,14 +11,17 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: @text-h1;
   .normal-font(27px; 30px; 700);
 
   &--inner {
+    box-sizing: border-box;
     display: flex;
-    min-height: 177px;
+    min-height: 172px;
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
+    padding-bottom: 5px;
     background-color: @title-bg;
     overflow: hidden;
   }
@@ -67,7 +70,9 @@
 
   .page__title-h1--inner {
     position: relative;
-    margin-bottom: 70px;
+    min-height: 130px;
+    margin-bottom: 69px;
+    padding-bottom: 50px;
   }
 
   .page__title-h1--inner::after {
@@ -98,7 +103,9 @@
   }
 
   .page__title-h1--inner {
-    margin-bottom: 128px;
+    min-height: 127px;
+    margin-bottom: 111px;
+    padding-bottom: 85px;
   }
 
   .page__title-h1--inner::after {

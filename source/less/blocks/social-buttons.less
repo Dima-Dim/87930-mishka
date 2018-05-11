@@ -7,7 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 78px;
+  min-height: 80px;
   .list();
 }
 
@@ -49,20 +49,41 @@
 .social-buttons__button--instagram svg {
   width: 22px;
   height: 21px;
+  margin-top: 5px;
+  margin-right: 4px;
 }
 
 .social-buttons__button--facebook svg {
   width: 15px;
   height: 28px;
+  margin-right: 5px;
 }
 
 .social-buttons__button--twitter svg {
   width: 23px;
   height: 20px;
+  margin-top: 4px;
+  margin-right: 7px;
 }
 
 @media (min-width: @tablet-width) {
   .social-buttons {
     border: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .social-buttons__button--instagram svg {
+    margin-top: 5px;
+    margin-right: 8px;
+  }
+
+  .social-buttons__button--facebook svg {
+    margin-right: 10px;
+  }
+
+  .social-buttons__button--twitter svg {
+    margin-top: 5px;
+    margin-right: 12px;
   }
 }

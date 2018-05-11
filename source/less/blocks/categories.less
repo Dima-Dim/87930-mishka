@@ -37,7 +37,6 @@
   max-width: 100%;
   min-height: 103px;
   .center-margin();
-  padding-left: 28px;
   color: @light;
   .normal-font(19px; 24px; 700);
   text-decoration: none;
@@ -54,16 +53,18 @@
 }
 //--For work align-items: center in IE11
 
-.categories__link p {
+.categories__title {
   align-self: center;
   margin: 0;
-  padding: 0;
+  padding: 0 0 3px 0;
+  .normal-font(19px; 24px; 700);
+  transition: 0.4s;
 }
 
 .categories__link svg {
   position: absolute;
-  top: calc(~"50% - 31px");
-  right: 0;
+  top: calc(~"50% - 29px");
+  right: 7px;
   fill: @categories-icon;
   opacity: 0.5;
   transition: 0.4s;
@@ -76,19 +77,21 @@
   opacity: 0.7;
 }
 
-.categories__link:active svg {
-  opacity: 0.3;
-}
-
 .categories__item--interior svg {
   width: 40px;
   height: 62px;
 }
 
 .categories__item--toy svg {
-  right: -8px;
+  top: 20px;
+  right: -3px;
   width: 60px;
   height: 60px;
+}
+
+.categories__title:active,
+.categories__title:active + svg {
+  opacity: 0.3;
 }
 
 @media (min-width: @tablet-width) {
@@ -107,7 +110,7 @@
     height: 23px;
     background-image: url("../img/volna-part-desktop.svg");
     background-position: center;
-    background-size: 78px 23px;
+    background-size: 77px 23px;
     background-repeat: repeat-x;
     overflow: hidden;
   }
@@ -127,6 +130,22 @@
     font-size: 20px;
     line-height: 30px;
   }
+
+  .categories__title {
+    padding-top: 2px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .categories__item--interior svg {
+    top: 31px;
+    right: -1px;
+  }
+
+  .categories__item--toy svg {
+    top: 32px;
+    right: -3px;
+  }
 }
 
 @media (min-width: @desktop-width) {
@@ -136,8 +155,8 @@
   }
 
   .categories::after {
-    height: 34px;
-    background-size: 115px 34px;
+    height: 35px;
+    background-size: 125px 38px;
   }
 
   .categories__list {
@@ -146,5 +165,11 @@
 
   .categories__item {
     min-width: 525px;
+  }
+
+  .categories__link {
+    align-items: flex-start;
+    width: 451px;
+    margin: 0 0 0 35px;
   }
 }

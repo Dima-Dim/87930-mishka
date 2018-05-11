@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 78px;
+  min-height: 75px;
 }
 
 //For work align-items: center in IE11--
@@ -27,6 +27,8 @@
 }
 
 .copyright__title {
+  padding-right: 2px;
+  padding-bottom: 1px;
   color: @dark;
   .normal-font(19px; 19px; 700);
 }
@@ -34,7 +36,8 @@
 .copyright__link svg {
   width: 27px;
   height: 34px;
-  margin-left: 30px;
+  margin-top: 2px;
+  margin-left: 28px;
   fill: @company-color-light;
   transition: 0.4s;
 }
@@ -46,4 +49,19 @@
 
 .copyright__link:active svg {
   opacity: 0.3;
+}
+
+@media (min-width: @tablet-width) {
+  .copyright {
+    margin-right: 0;
+  }
+
+  .copyright__title {
+    margin-top: 22px;
+  }
+
+  .copyright__link svg {
+    margin-top: 6px;
+    margin-left: 28px;
+  }
 }
