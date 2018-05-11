@@ -412,18 +412,11 @@
 }
 
 @media (min-width: @desktop-width) {
-  .form__field-group--textarea {
-    width: @desktop-content-width;
-    padding-right: 175px;
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   .form__title {
     box-sizing: border-box;
     width: 175px;
     margin-top: 17px;
-    padding-left: 60px;
+    padding-left: 61px;
   }
 
   .form__list,
@@ -436,7 +429,11 @@
   }
 
   .form__checkbox-label {
-    width: 260px;
+    width: 262px;
+  }
+
+  .form__field-group--name {
+    padding-top: 49px;
   }
 
   .form__field-group--name ul {
@@ -455,22 +452,37 @@
 
   .form__list--tel svg,
   .form__list--email svg {
-    right: 175px;
+    right: 182px;
+  }
+
+  .form__field-group--textarea {
+    width: @desktop-content-width;
+    padding-right: 125px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 35px;
+  }
+
+  .form__field-group--textarea .form__title {
+    width: 123px;
+    padding-left: 11px;
   }
 
   .form__textarea {
     width: 700px;
+    margin-left: 0;
   }
 
   .form__footer {
     box-sizing: border-box;
     width: @desktop-content-width;
-    padding-left: 175px;
-    padding-right: 175px;
+    .center-margin();
+    padding-left: 174px;
+    padding-right: 115px;
     margin-bottom: 50px;
   }
 
   .form__footnote {
-    width: 465px;
+    width: 470px;
   }
 }
