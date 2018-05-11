@@ -5,7 +5,7 @@
 .product__image {
   width: 260px;
   height: 195px;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 }
 
 .product__description-wrap {
@@ -24,7 +24,8 @@
 .product__title {
   color: @text-main;
   margin-left: 28px;
-  padding-bottom: 1px;
+  margin-bottom: 5px;
+  padding-right: 24px;
   .normal-font(17px; 24px; 700);
   text-decoration: none;
 }
@@ -46,7 +47,8 @@
 
 .product__buy {
   display: flex;
-  min-height: 72px;
+  //box-sizing: border-box;
+  min-height: 71px;
   align-items: center;
   justify-content: space-between;
   margin-right: 20px;
@@ -69,13 +71,15 @@
 //--For work align-items: center in IE11
 
 .product__price {
-  padding: 0;
+  padding: 0 0 7px 0;
   margin-right: auto;
 }
 
 .product__buy svg {
   width: 21px;
   height: 18px;
+  padding-bottom: 10px;
+  padding-right: 6px;
   fill: @dark;
   overflow: hidden;
 }
