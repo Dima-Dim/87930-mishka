@@ -96,6 +96,11 @@
   }
 }
 
+.form__radio-input,
+.checkboxes__input {
+  display: none;
+}
+
 .form__radio-input:checked + .form__radio-label::after {
   opacity: 1;
 }
@@ -308,7 +313,7 @@
 
   .form__field-group--checkboxes {
     padding-bottom: 26px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 
   .form__field-group--checkboxes ul {
