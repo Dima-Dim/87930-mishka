@@ -27,17 +27,17 @@
             </picture>
           </a>
         </li>
-        <li class="menu-list__item menu-list__item--catalog">
+        <li class="menu-list__item menu-list__item--catalog menu-list__item--closed">
           <a class="menu-list__link" href="catalog.html">
             <p class="menu-list__link-text">Каталог товаров</p>
           </a>
         </li>
-        <li class="menu-list__item menu-list__item--custom">
+        <li class="menu-list__item menu-list__item--custom menu-list__item--closed">
           <a class="menu-list__link" href="form.html">
             <p class="menu-list__link-text">Вязание на заказ</p>
           </a>
         </li>
-        <li class="menu-list__item menu-list__item--search">
+        <li class="menu-list__item menu-list__item--search menu-list__item--closed">
           <svg>
             <use xlink:href="#icon-search"></use>
           </svg>
@@ -45,7 +45,7 @@
             <p class="menu-list__link-text">Поиск по сайту</p>
           </a>
         </li>
-        <li class="menu-list__item menu-list__item--cart">
+        <li class="menu-list__item menu-list__item--cart menu-list__item--closed">
           <svg>
             <use xlink:href="#icon-cart"></use>
           </svg>
@@ -53,17 +53,17 @@
             <p class="menu-list__link-text">Корзина: пока пуста</p>
           </a>
         </li>
-        <li class="menu-list__item menu-list__item--new">
+        <li class="menu-list__item menu-list__item--new menu-list__item--closed">
           <a class="menu-list__link" href="new.html">
             <p class="menu-list__link-text">Новые поступления</p>
           </a>
         </li>
-        <li class="menu-list__item menu-list__item--sale">
+        <li class="menu-list__item menu-list__item--sale menu-list__item--closed">
           <a class="menu-list__link" href="sale.html">
             <p class="menu-list__link-text">Распродажа</p>
           </a>
         </li>
-        <li class="menu-list__item menu-list__item--delivery">
+        <li class="menu-list__item menu-list__item--delivery menu-list__item--closed">
           <a class="menu-list__link" href="sale.html">
             <p class="menu-list__link-text">Бесплатная доставка по России</p>
           </a>
@@ -73,18 +73,18 @@
   </nav>
 </header>
 <main class="order">
-  <h1 class="page__title-h1 page__title-h1--inner">Вязание на заказ</h1>
+  <h1 class="page__title-h1 page__title-h1--inner order__title">Вязание на заказ</h1>
   <p class="page__text order__description">Мы будем рады воплотить в жизнь ваши пожелания! Заполните простую форму
     заказа и мы свяжемся с вами, чтобы уточнить детали.</p>
   <form class="order__form form" action="https://echo.htmlacademy.ru/">
     <section class="form__field-group">
       <h2 class="form__title">Тип</h2>
       <ul class="form__list">
-        <li>
+        <li class="form__item">
           <input class="form__radio-input visually-hidden" type="radio" name="type" id="accessories" value="" checked>
           <label class="form__radio-label" for="accessories">Аксессуар для интерьера</label>
         </li>
-        <li>
+        <li class="form__item">
           <input class="form__radio-input visually-hidden" type="radio" name="type" id="toy" value="">
           <label class="form__radio-label" for="toy">Детская игрушка</label>
         </li>
