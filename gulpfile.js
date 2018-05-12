@@ -100,7 +100,7 @@ gulp.task("html", function () {
 
 gulp.task('js', function () {
     // returns a Node.js stream, but no handling of error messages
-    return gulp.src(basePatch.js + "/*.js")
+    return gulp.src([basePatch.js + "/*.js", "!" + basePatch.js + "/*.min.js"])
         .pipe(gp.uglify())
         .pipe(gulp.dest(path.build.js));
 });
@@ -111,7 +111,7 @@ gulp.task("copy-fonts-to-build", function () {
 });
 
 gulp.task("copy-js-lib-to-build", function () {
-    return gulp.src(basePatch.js + "-lib/*.js")
+    return gulp.src(basePatch.js + "/*.min.js")
         .pipe(gulp.dest(path.build.js));
 });
 

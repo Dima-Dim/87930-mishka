@@ -42,6 +42,7 @@
     "*.js",
     "source/*.html",
     "source/js/**/*.js",
+    "!source/js/**/*.min.js",
     "source/img/**/*.svg",
     "source/less/**/*.less"
   ],
