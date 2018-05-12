@@ -124,14 +124,16 @@
     width: 46.3vw;
     min-height: 88px;
     flex-grow: 1;
+    align-self: left;
     background: @light;
     border-bottom: 1px solid fade(@dark, 10);
     order: -1;
   }
 
   .menu-list__item--logo a {
-    margin-top: 1px;
-    margin-left: 0;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    margin: 0;
     padding-left: 6.3vw;
     padding-right: @wrapper-t;
   }
@@ -169,6 +171,7 @@
   .menu-list__item--search svg {
     margin-top: 1px;
     margin-left: 3px;
+    left: calc(~"50% - 10px");
   }
 
   .menu-list__item--search .menu-list__link-text {
@@ -217,6 +220,15 @@
     width: initial;
     min-height: 55px;
     padding-left: 18px;
+  }
+
+  .menu-list__link::after {
+    content: "";
+    display: none;
+    min-height: inherit;
+    font-size: 0;
+    overflow: hidden;
+    pointer-events: none;
   }
 }
 
@@ -284,6 +296,10 @@
 
   .menu-list__item--search a {
     width: 100%;
+  }
+
+  .menu-list__item--search svg {
+    left: calc(~"50% - 11px");
   }
 
   .menu-list__item--cart {
