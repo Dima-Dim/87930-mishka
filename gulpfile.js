@@ -110,8 +110,8 @@ gulp.task("copy-fonts-to-build", function () {
         .pipe(gulp.dest(path.build.fonts));
 });
 
-gulp.task("copy-js-to-build", function () {
-    return gulp.src(basePatch.js + "/*.js")
+gulp.task("copy-js-lib-to-build", function () {
+    return gulp.src(basePatch.js + "-lib/*.js")
         .pipe(gulp.dest(path.build.js));
 });
 
@@ -135,4 +135,4 @@ gulp.task("serve", function () {
     gulp.watch(path.build.img).on("change", server.reload);
 });
 
-gulp.task("build", gulp.series("clean", "sprite", "style", "js", "img", "webp", "copy-fonts-to-build", "html"));
+gulp.task("build", gulp.series("clean", "sprite", "style", "js", "img", "webp", "copy-fonts-to-build", "copy-js-lib-to-build", "html"));
