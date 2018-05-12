@@ -3,6 +3,7 @@ var goodsWeekOrder = document.querySelector(".goods-week__order");
 var modalCart = document.querySelector(".modal-cart");
 var modalOverlay = document.querySelector(".modal-overlay");
 var productBuy = document.querySelector(".product__buy");
+var productionOrder = document.querySelector(".production__order");
 
 //Functions for traversing all required classes --
 function removeClass(selector, Class) {
@@ -52,6 +53,16 @@ if (goodsWeekOrder) {
 
 if (productBuy) {
     productBuy.addEventListener("click", function () {
+        event.preventDefault();
+        removeClass(".modal-cart", "modal-cart--closed");
+        removeClass(".modal-overlay", "modal-overlay--closed");
+        modalCart.classList.remove("climb");
+        modalCart.classList.add("subsidence");
+    });
+}
+
+if (productionOrder) {
+    productionOrder.addEventListener("click", function () {
         event.preventDefault();
         removeClass(".modal-cart", "modal-cart--closed");
         removeClass(".modal-overlay", "modal-overlay--closed");
