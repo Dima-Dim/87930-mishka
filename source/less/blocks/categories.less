@@ -33,10 +33,11 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: @mobile-content-width;
+  //width: @mobile-content-width;
   max-width: 100%;
   min-height: 103px;
-  .center-margin();
+  padding-left: @wrapper-m;
+  padding-right: @wrapper-m;
   color: @light;
   .normal-font(19px; 24px; 700);
   text-decoration: none;
@@ -64,7 +65,7 @@
 .categories__link svg {
   position: absolute;
   top: calc(~"50% - 29px");
-  right: 7px;
+  right: 37px;
   fill: @categories-icon;
   opacity: 0.5;
   transition: 0.4s;
@@ -84,7 +85,7 @@
 
 .categories__item--toy svg {
   top: 20px;
-  right: -3px;
+  right: 27px;
   width: 60px;
   height: 60px;
 }
@@ -129,6 +130,7 @@
     min-height: 119px;
     font-size: 20px;
     line-height: 30px;
+    padding-left: 36px;
   }
 
   .categories__title {
@@ -139,12 +141,12 @@
 
   .categories__item--interior svg {
     top: 31px;
-    right: -1px;
+    right: 36px;
   }
 
   .categories__item--toy svg {
     top: 32px;
-    right: -3px;
+    right: 34px;
   }
 }
 
@@ -155,6 +157,7 @@
   }
 
   .categories::after {
+    bottom: -2px;
     height: 36px;
     background-size: 125px 38px;
   }
@@ -169,7 +172,10 @@
 
   .categories__link {
     align-items: flex-start;
-    width: 451px;
-    margin: 0 0 0 35px;
+    width: 100%;
+  }
+
+  .categories__item--interior svg {
+    right: 37px;
   }
 }
