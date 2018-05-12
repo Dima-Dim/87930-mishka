@@ -37,9 +37,9 @@
   }
 }
 
-.retina-2bg (@1bg-img: ''; @2bg-img: ''; @1bg-width: auto; @1bg-height: auto; @2bg-width: auto; @2bg-height: auto; @dppx: 2) {
+.retina-2bg (@bg1-img: ''; @bg2-img: ''; @bg1-width: auto; @bg1-height: auto; @bg2-width: auto; @bg2-height: auto; @dppx: 2) {
   @media (min-resolution: unit((96 * (@dppx - 0.5)), dpi)), (min-resolution: unit((@dppx - 0.5), dppx)) {
-    background-image: url(@1bg-img), url(@2bg-img),;
-    background-size: @1bg-width @1bg-height, @2bg-width @2bg-height;
+    background-image: url(@bg1-img), url(@bg1-img),;
+    background-size: @bg1-width @bg1-height, @bg2-width @bg2-height;
   }
 }
