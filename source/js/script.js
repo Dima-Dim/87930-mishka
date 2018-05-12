@@ -2,6 +2,7 @@ var mainNavigationToggle = document.querySelector(".main-navigation__toggle");
 var goodsWeekOrder = document.querySelector(".goods-week__order");
 var modalCart = document.querySelector(".modal-cart");
 var modalOverlay = document.querySelector(".modal-overlay");
+var productBuy = document.querySelector(".product__buy");
 
 //Functions for traversing all required classes --
 function removeClass(selector, Class) {
@@ -21,39 +22,53 @@ function addClass(selector, Class) {
 //--Functions for traversing all required classes
 
 //Remove modifier --nojs --
-removeClass('.main-navigation__toggle', 'main-navigation__toggle--nojs');
-removeClass('.menu-list__item', 'menu-list__item--nojs');
+removeClass(".main-navigation__toggle", "main-navigation__toggle--nojs");
+removeClass(".menu-list__item", "menu-list__item--nojs");
 //--Remove modifier --nojs
 
-mainNavigationToggle.addEventListener('click', function () {
+mainNavigationToggle.addEventListener("click", function () {
     event.preventDefault();
-    if (mainNavigationToggle.classList.contains('main-navigation__toggle--closed')) {
-        removeClass('.main-navigation__toggle', 'main-navigation__toggle--closed');
-        addClass('.main-navigation__toggle', 'main-navigation__toggle--opened');
-        removeClass('.menu-list__item', 'menu-list__item--closed');
+    if (mainNavigationToggle.classList.contains("main-navigation__toggle--closed")) {
+        removeClass(".main-navigation__toggle", "main-navigation__toggle--closed");
+        addClass(".main-navigation__toggle", "main-navigation__toggle--opened");
+        removeClass(".menu-list__item", "menu-list__item--closed");
     }
     else {
-        removeClass('.main-navigation__toggle', 'main-navigation__toggle--opened');
-        addClass('.main-navigation__toggle', 'main-navigation__toggle--closed');
-        addClass('.menu-list__item', 'menu-list__item--closed');
+        removeClass(".main-navigation__toggle", "main-navigation__toggle--opened");
+        addClass(".main-navigation__toggle", "main-navigation__toggle--closed");
+        addClass(".menu-list__item", "menu-list__item--closed");
     }
 });
 
-goodsWeekOrder.addEventListener('click', function () {
-    event.preventDefault();
-    removeClass('.modal-cart', 'modal-cart--closed');
-    removeClass('.modal-overlay', 'modal-overlay--closed');
-    modalCart.classList.remove("climb");
-    modalCart.classList.add("subsidence");
-});
+if (goodsWeekOrder) {
+    goodsWeekOrder.addEventListener("click", function () {
+        event.preventDefault();
+        removeClass(".modal-cart", "modal-cart--closed");
+        removeClass(".modal-overlay", "modal-overlay--closed");
+        modalCart.classList.remove("climb");
+        modalCart.classList.add("subsidence");
+    });
+}
 
-modalOverlay.addEventListener("click", function (event) {
-    event.preventDefault();
-    modalCart.classList.add("climb");
-    modalCart.classList.remove("subsidence");
-    modalCart.classList.remove("shake");
-    modalOverlay.classList.add("modal-overlay--closed");
-});
+if (productBuy) {
+    productBuy.addEventListener("click", function () {
+        event.preventDefault();
+        removeClass(".modal-cart", "modal-cart--closed");
+        removeClass(".modal-overlay", "modal-overlay--closed");
+        modalCart.classList.remove("climb");
+        modalCart.classList.add("subsidence");
+    });
+}
+
+if (modalOverlay) {
+    modalOverlay.addEventListener("click", function (event) {
+        event.preventDefault();
+        modalCart.classList.add("climb");
+        modalCart.classList.remove("subsidence");
+        modalCart.classList.remove("shake");
+        modalOverlay.classList.add("modal-overlay--closed");
+    });
+}
 
 window.addEventListener("keydown", function (event) {
     if (!modalOverlay.classList.contains("modal-overlay--closed") && event.keyCode === 27) {
