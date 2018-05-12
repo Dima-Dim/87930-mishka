@@ -2,7 +2,7 @@ var mainNavigationToggle = document.querySelector(".main-navigation__toggle");
 var goodsWeekOrder = document.querySelector(".goods-week__order");
 var modalCart = document.querySelector(".modal-cart");
 var modalOverlay = document.querySelector(".modal-overlay");
-var productBuy = document.querySelector(".product__buy");
+var productBuy = document.querySelectorAll(".product__buy");
 var productionOrder = document.querySelector(".production__order");
 
 //Functions for traversing all required classes --
@@ -27,8 +27,7 @@ removeClass(".main-navigation__toggle", "main-navigation__toggle--nojs");
 removeClass(".menu-list__item", "menu-list__item--nojs");
 //--Remove modifier --nojs
 
-mainNavigationToggle.addEventListener("click", function () {
-    event.preventDefault();
+mainNavigationToggle.addEventListener("click", function (event) {
     if (mainNavigationToggle.classList.contains("main-navigation__toggle--closed")) {
         removeClass(".main-navigation__toggle", "main-navigation__toggle--closed");
         addClass(".main-navigation__toggle", "main-navigation__toggle--opened");
@@ -42,30 +41,32 @@ mainNavigationToggle.addEventListener("click", function () {
 });
 
 if (goodsWeekOrder) {
-    goodsWeekOrder.addEventListener("click", function () {
+    goodsWeekOrder.addEventListener("click", function (event) {
         event.preventDefault();
-        removeClass(".modal-cart", "modal-cart--closed");
-        removeClass(".modal-overlay", "modal-overlay--closed");
+        modalCart.classList.remove("modal-cart--closed");
+        modalOverlay.classList.remove("modal-overlay--closed");
         modalCart.classList.remove("climb");
         modalCart.classList.add("subsidence");
     });
 }
 
 if (productBuy) {
-    productBuy.addEventListener("click", function () {
-        event.preventDefault();
-        removeClass(".modal-cart", "modal-cart--closed");
-        removeClass(".modal-overlay", "modal-overlay--closed");
-        modalCart.classList.remove("climb");
-        modalCart.classList.add("subsidence");
-    });
+    for (var i = 0; i < productBuy.length; i++) {
+        productBuy[i].addEventListener("click", function (event) {
+            event.preventDefault();
+            modalCart.classList.remove("modal-cart--closed");
+            modalOverlay.classList.remove("modal-overlay--closed");
+            modalCart.classList.remove("climb");
+            modalCart.classList.add("subsidence");
+        });
+    }
 }
 
 if (productionOrder) {
-    productionOrder.addEventListener("click", function () {
+    productionOrder.addEventListener("click", function (event) {
         event.preventDefault();
-        removeClass(".modal-cart", "modal-cart--closed");
-        removeClass(".modal-overlay", "modal-overlay--closed");
+        modalCart.classList.remove("modal-cart--closed");
+        modalOverlay.classList.remove("modal-overlay--closed");
         modalCart.classList.remove("climb");
         modalCart.classList.add("subsidence");
     });
