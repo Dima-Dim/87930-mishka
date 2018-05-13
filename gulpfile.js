@@ -36,7 +36,7 @@ var gulp = require("gulp"),
             css: basePatch.build + "/css",
             img: basePatch.build + "/img",
             fonts: basePatch.build + "/fonts",
-            js: basePatch.build + "/fonts"
+            js: basePatch.build + "/js"
         }
     };
 
@@ -98,13 +98,20 @@ gulp.task("html", function () {
         .pipe(gulp.dest(path.build.root));
 });
 
+gulp.task('js', function () {
+    // returns a Node.js stream, but no handling of error messages
+    return gulp.src([basePatch.js + "/*.js", "!" + basePatch.js + "/*.min.js"])
+        .pipe(gp.uglify())
+        .pipe(gulp.dest(path.build.js));
+});
+
 gulp.task("copy-fonts-to-build", function () {
     return gulp.src(basePatch.fonts + "/*.{woff,woff2}")
         .pipe(gulp.dest(path.build.fonts));
 });
 
-gulp.task("copy-js-to-build", function () {
-    return gulp.src(basePatch.js + "/*.js")
+gulp.task("copy-js-lib-to-build", function () {
+    return gulp.src(basePatch.js + "/*.min.js")
         .pipe(gulp.dest(path.build.js));
 });
 
@@ -128,4 +135,4 @@ gulp.task("serve", function () {
     gulp.watch(path.build.img).on("change", server.reload);
 });
 
-gulp.task("build", gulp.series("clean", "sprite", "style", "img", "webp", "copy-fonts-to-build", "copy-js-to-build", "html"));
+gulp.task("build", gulp.series("clean", "sprite", "style", "js", "img", "webp", "copy-fonts-to-build", "copy-js-lib-to-build", "html"));

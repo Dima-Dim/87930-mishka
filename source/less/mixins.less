@@ -30,9 +30,16 @@
   margin: @margin-c;
 }
 
-.retina-bg (@bg-img: ''; @bs-width: auto; @bs-height: auto; @dppx: 2) {
+.retina-bg (@bg-img: ''; @bg-width: auto; @bg-height: auto; @dppx: 2) {
   @media (min-resolution: unit((96 * (@dppx - 0.5)), dpi)), (min-resolution: unit((@dppx - 0.5), dppx)) {
     background-image: url(@bg-img);
-    background-size: @bs-width @bs-height;
+    background-size: @bg-width @bg-height;
+  }
+}
+
+.retina-2bg (@bg1-img: ''; @bg2-img: ''; @bg1-width: auto; @bg1-height: auto; @bg2-width: auto; @bg2-height: auto; @dppx: 2) {
+  @media (min-resolution: unit((96 * (@dppx - 0.5)), dpi)), (min-resolution: unit((@dppx - 0.5), dppx)) {
+    background-image: url(@bg1-img), url(@bg1-img),;
+    background-size: @bg1-width @bg1-height, @bg2-width @bg2-height;
   }
 }
