@@ -142,12 +142,14 @@
 }
 
 .form__text-input {
+  box-sizing: border-box;
   display: block;
   width: 100%;
-  min-height: 50px;
+  min-height: 52px;
   margin-bottom: 23px;
+  padding: 15px 5px 13px 0;
   color: @text-light;
-  .normal-font(19px; 19px; 400);
+  .normal-font(17px; 18px; 400);
   background: transparent;
   border: none;
   box-shadow: inset 0 -2px 0 @dark;
@@ -161,6 +163,7 @@
 }
 
 .form__text-input::placeholder {
+  padding: 0;
   color: fade(@text-light, 30);
   .normal-font(17px; 18px; 400);
 }
@@ -215,7 +218,7 @@
   box-sizing: border-box;
   width: 100%;
   min-height: 142px;
-  padding: 15px;
+  padding: 13px 15px 15px 14px;
   margin-bottom: 15px;
   color: fade(@text-light, 30);
   .normal-font(17px; 18px; 400);
@@ -265,7 +268,7 @@
 
   .form__title {
     width: 165px;
-    margin-top: 17px;
+    margin-top: 16px;
     align-self: flex-start;
 
     &::after {
@@ -312,6 +315,7 @@
   }
 
   .form__field-group--checkboxes {
+    padding-top: 49px;
     padding-bottom: 26px;
     margin-bottom: 0;
   }
@@ -340,12 +344,21 @@
   .form__text-input {
     width: 350px;
     flex-grow: 1;
+    //margin-bottom: 20px;
+    padding: 14px 5px 15px 17px;
+    font-size: 19px;
+    line-height: 19px;
   }
 
   .form__text-input::placeholder {
-    padding-left: 18px;
+    padding: 0;
     font-size: 19px;
     line-height: 19px;
+  }
+
+  .form__field-group--name .form__text-input {
+    min-height: 55px;
+    margin-bottom: 20px;
   }
 
   .form__field-group--tel-email div {
@@ -365,6 +378,8 @@
   .form__text-input--tel,
   .form__text-input--email {
     width: 100%;
+    min-height: 55px;
+    margin-bottom: 20px;
     background-color: transparent;
   }
 
@@ -384,8 +399,8 @@
   }
 
   .form__field-group--textarea {
-    margin-bottom: 39px;
-    padding-top: 21px;
+    margin-bottom: 38px;
+    padding-top: 22px;
   }
 
   .form__textarea {
