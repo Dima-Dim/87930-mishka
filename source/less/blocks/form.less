@@ -59,7 +59,7 @@
     position: absolute;
     content: "";
     left: 12px;
-    top: 14px;
+    top: calc(~"50% - 6px");
     box-sizing: border-box;
     width: 16px;
     height: 16px;
@@ -76,7 +76,7 @@
   }
 
   &::after {
-    top: 5px;
+    top: calc(~"50% - 14px");
   }
 }
 
@@ -220,12 +220,16 @@
   min-height: 142px;
   padding: 13px 15px 15px 14px;
   margin-bottom: 15px;
-  color: fade(@text-light, 30);
+  color: @text-light;
   .normal-font(17px; 18px; 400);
   border: 2px solid @text-light;
   background-color: @light;
   transition: 0.4s;
   outline: none;
+}
+
+.form__textarea::placeholder {
+  color: fade(@text-light, 30);
 }
 
 .form__textarea:hover,
