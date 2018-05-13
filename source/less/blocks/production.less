@@ -35,7 +35,7 @@
 
 .production__title {
   width: 170px;
-  padding: 25px 0 23px 0;
+  padding: 23px 0 23px 0;
   .normal-font(17px; 24px; 700);
 }
 
@@ -79,7 +79,7 @@
 
 .production__order {
   width: 192px;
-  height: 52px;
+  min-height: 48px;
   margin: 0 auto;
   font-size: 17px;
 }
@@ -159,7 +159,6 @@
 
   .production__order {
     width: 584px;
-    height: 52px;
   }
 }
 
@@ -167,6 +166,7 @@
   .production {
     position: relative;
     box-sizing: border-box;
+    display: block;
     width: @desktop-content-width;
     min-height: 455px;
     padding: 0 0 0 682px;
@@ -179,10 +179,10 @@
   }
 
   .production__icon {
+    margin-top: 3px;
+    margin-bottom: 21px;
     padding: 0;
     padding-left: 78px;
-    margin-right: auto;
-    margin-bottom: 17px;
   }
 
   .production__link {
@@ -201,22 +201,22 @@
     padding-top: 0;
     padding-left: 78px;
     padding-right: 50px;
-    padding-bottom: 26px;
+    padding-bottom: 33px;
   }
 
   .production__description-wrap {
     padding-left: 0;
+    padding-bottom: 58px;
   }
 
   .production__description {
     padding-left: 78px;
     padding-right: 0;
-    padding-bottom: 46px;
+    padding-bottom: 47px;
   }
 
   .production__order {
     width: 230px;
-    height: 52px;
     margin-top: auto;
     margin-left: 78px;
   }

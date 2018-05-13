@@ -47,7 +47,6 @@ gulp.task("style", function () {
         .pipe(gp.postcss([
             autoprefixer()
         ]))
-        .pipe(gulp.dest(path.build.css))
         .pipe(gp.csso())
         .pipe(gp.rename("style.min.css"))
         .pipe(gulp.dest(path.build.css))
