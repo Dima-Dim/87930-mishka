@@ -21,8 +21,13 @@
 @media (min-width: @desktop-width) {
   .goods__list {
     display: flex;
-    justify-content: space-between;
+    //justify-content: space-between;
+    justify-content: flex-start;
     width: @desktop-content-width;
     padding-right: 5px;
+  }
+
+  .goods__item:not(:nth-of-type(3n)) {
+    margin-right: 51px;
   }
 }
