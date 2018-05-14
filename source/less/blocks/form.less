@@ -432,7 +432,7 @@
   .form__footer {
     display: flex;
     width: @tablet-content-width;
-    padding-left: 50px;
+    .center-margin();
   }
 
   .form__button {
@@ -514,13 +514,16 @@
   .form__footer {
     box-sizing: border-box;
     width: @desktop-content-width;
-    .center-margin();
     padding-left: 174px;
-    padding-right: 115px;
+    padding-right: 175px;
     margin-bottom: 49px;
   }
 
   .form__footnote {
     width: 470px;
+  }
+
+  .form__button {
+    margin-left: 0;
   }
 }
