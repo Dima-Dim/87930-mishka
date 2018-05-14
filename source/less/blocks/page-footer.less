@@ -7,7 +7,7 @@
 }
 
 @media (min-width: @tablet-width) {
-  .page-footer--wrap {
+  .page-footer__wrap {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -17,7 +17,7 @@
   }
 
   //For work align-items: center in IE11--
-  .page-footer--wrap::after {
+  .page-footer__wrap::after {
     content: "";
     display: block;
     min-height: inherit;
@@ -35,7 +35,7 @@
 }
 
 @media (min-width: @desktop-width) {
-  .page-footer--wrap {
+  .page-footer__wrap {
     width: @desktop-content-width;
     .center-margin();
     padding: 0;
