@@ -199,10 +199,20 @@
   height: 32px;
 }
 
-.form__list--tel:hover svg,
-.form__list--tel:focus svg,
-.form__list--email:hover svg,
-.form__list--email:focus svg {
+.form__list--tel:hover .form__text-input--tel {
+  box-shadow: inset 0 -2px 0 @checkbox-hover;
+}
+
+.form__list--email:hover .form__text-input--email {
+  box-shadow: inset 0 -2px 0 @checkbox-hover;
+}
+
+.form__list:hover svg,
+.form__list:focus svg,
+.form__list:active svg,
+.form__text-input:hover + svg,
+.form__text-input:focus + svg,
+.form__text-input:active + svg {
   fill: @checkbox-hover;
   opacity: 1;
 }
