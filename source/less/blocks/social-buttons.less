@@ -1,14 +1,15 @@
 .social-buttons {
   min-height: 78px;
-  border-bottom: 1px solid @social-border;
 }
 
 .social-buttons__list {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 81.25%;
   min-height: 80px;
-  .list();
+  .list(0 auto);
+  border-bottom: 1px solid @social-border;
 }
 
 //For work align-items: center in IE11--
@@ -68,9 +69,13 @@
 
 @media (min-width: @tablet-width) {
   .social-buttons {
-    border: none;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .social-buttons__list {
+    width: 280px;
+    border: none;
   }
 
   .social-buttons__button--instagram svg {

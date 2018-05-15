@@ -199,10 +199,25 @@
   height: 32px;
 }
 
-.form__list--tel:hover svg,
-.form__list--tel:focus svg,
-.form__list--email:hover svg,
-.form__list--email:focus svg {
+.form__text-input--tel,
+.form__text-input--email {
+  padding-right: 45px;
+}
+
+.form__list--tel:hover .form__text-input--tel {
+  box-shadow: inset 0 -2px 0 @checkbox-hover;
+}
+
+.form__list--email:hover .form__text-input--email {
+  box-shadow: inset 0 -2px 0 @checkbox-hover;
+}
+
+.form__list:hover svg,
+.form__list:focus svg,
+.form__list:active svg,
+.form__text-input:hover + svg,
+.form__text-input:focus + svg,
+.form__text-input:active + svg {
   fill: @checkbox-hover;
   opacity: 1;
 }
@@ -256,6 +271,10 @@
 }
 
 @media (min-width: @tablet-width) {
+  .form {
+    margin-bottom: 52px;
+  }
+
   .form__field-group {
     position: relative;
     box-sizing: border-box;
@@ -322,7 +341,7 @@
 
   .form__field-group--checkboxes {
     padding-top: 49px;
-    padding-bottom: 26px;
+    padding-bottom: 25px;
     margin-bottom: 0;
   }
 
@@ -363,7 +382,11 @@
 
   .form__field-group--name .form__text-input {
     min-height: 55px;
-    margin-bottom: 20px;
+    margin-bottom: 21px;
+  }
+
+  .form__field-group--tel-email {
+    padding-top: 48px;
   }
 
   .form__field-group--tel-email div {
@@ -385,6 +408,7 @@
     width: 100%;
     min-height: 55px;
     margin-bottom: 20px;
+    padding-right: 60px;
     background-color: transparent;
   }
 
@@ -400,7 +424,7 @@
   .form__list--email svg {
     z-index: 0;
     top: calc(~"50% - 25px");
-    right: 22px;
+    right: 23px;
   }
 
   .form__field-group--textarea {
@@ -416,7 +440,7 @@
   .form__footer {
     display: flex;
     width: @tablet-content-width;
-    padding-left: 50px;
+    .center-margin();
   }
 
   .form__button {
@@ -428,7 +452,7 @@
   .form__footnote {
     align-self: center;
     width: 440px;
-    margin: 0;
+    margin: 0 0 4px 0;
     text-align: right;
     font-size: 17px;
     line-height: 30px;
@@ -437,11 +461,15 @@
 }
 
 @media (min-width: @desktop-width) {
+  .form {
+    margin-bottom: 49px;
+  }
+
   .form__title {
     box-sizing: border-box;
     width: 175px;
     margin-top: 17px;
-    padding-left: 61px;
+    padding-left: 62px;
   }
 
   .form__list,
@@ -469,6 +497,7 @@
   .form__text-input--tel,
   .form__text-input--email {
     width: 700px;
+    padding-right: 50px;
   }
 
   .form__list--tel svg,
@@ -497,13 +526,16 @@
   .form__footer {
     box-sizing: border-box;
     width: @desktop-content-width;
-    .center-margin();
     padding-left: 174px;
-    padding-right: 115px;
+    padding-right: 175px;
     margin-bottom: 49px;
   }
 
   .form__footnote {
     width: 470px;
+  }
+
+  .form__button {
+    margin-left: 0;
   }
 }

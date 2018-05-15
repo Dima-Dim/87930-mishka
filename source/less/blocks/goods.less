@@ -5,25 +5,32 @@
 }
 
 .goods__item {
-  border: 1px solid @goods-border;
   margin-bottom: 30px;
 }
 
 @media (min-width: @tablet-width) {
+  .goods {
+    margin-bottom: 32px;
+  }
+
   .goods__list {
     width: @tablet-content-width;
   }
 
   .goods__item {
-    margin-bottom: 52px;
+    margin-bottom: 54px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .goods__list {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     width: @desktop-content-width;
     padding-right: 5px;
+  }
+
+  .goods__item:not(:nth-of-type(3n)) {
+    margin-right: 51px;
   }
 }

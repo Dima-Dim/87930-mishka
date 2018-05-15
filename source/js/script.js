@@ -24,19 +24,19 @@ function addClass(selector, Class) {
 
 //Remove modifier --nojs --
 removeClass(".main-navigation__toggle", "main-navigation__toggle--nojs");
-removeClass(".menu-list__item", "menu-list__item--nojs");
+removeClass(".main-navigation__list", "main-navigation__list--nojs");
 //--Remove modifier --nojs
 
 mainNavigationToggle.addEventListener("click", function (event) {
     if (mainNavigationToggle.classList.contains("main-navigation__toggle--closed")) {
         removeClass(".main-navigation__toggle", "main-navigation__toggle--closed");
         addClass(".main-navigation__toggle", "main-navigation__toggle--opened");
-        removeClass(".menu-list__item", "menu-list__item--closed");
+        addClass(".main-navigation__list", "main-navigation__list--opened");
     }
     else {
         removeClass(".main-navigation__toggle", "main-navigation__toggle--opened");
         addClass(".main-navigation__toggle", "main-navigation__toggle--closed");
-        addClass(".menu-list__item", "menu-list__item--closed");
+        removeClass(".main-navigation__list", "main-navigation__list--opened");
     }
 });
 
